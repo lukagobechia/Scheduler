@@ -54,7 +54,9 @@
         "Cook": "მზარეული",
         "Waiter": "მიმტანი",
         "cleaner": "დამლაგებელი",
-        "Prostitute": "ბოზი"
+        "lecturer": "ლექტორი",
+        "valet" : "სტაიანშიკი",
+        "Spiderman" : "ადამიანი ობობა"
     },
     "months": {
         "Jan": "იან",

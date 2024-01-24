@@ -55,7 +55,10 @@
         "Cook": "Cook",
         "Waiter": "Waiter",
         "cleaner": "Cleaner",
-        "Prostitute": "Prostitute"
+        "lecturer": "Lecturer",
+        "valet" : "Valet",
+        "Spiderman" : "Spideramn"
+        
     },
     "months": {
         "Jan": "Jan",
