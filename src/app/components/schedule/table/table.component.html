@@ -1,0 +1,34 @@
+<app-current-date></app-current-date>
+<div class="buttons">
+    <button (click)="navigateWeek(-7)"> ⤌ {{ 'PrevWeek' | translate }}</button>
+    <button (click)="navigateWeek(7)">{{ 'NextWeek' | translate }} ⤍</button>
+</div>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th *ngFor="let date of dates">{{ date }}</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td *ngFor="let day of days">{{ 'days.' + day | translate }}
+            </td>
+          </tr>
+            <tr *ngFor="let job of jobOptions">
+                <td>{{ 'jobOptions.' + job.title | translate }}</td>
+                <td *ngFor="let date of dates">
+                    <div *ngFor="let workerItem of worker">
+                        <ng-container *ngIf="workerItem.date === date && workerItem.jobTitle === job.title">
+                          <div class="workersInfo" [ngClass]="{'evening': workerItem.info.includes('Evening'), 'morning': workerItem.info.includes('Morning')}">
+                            {{workerItem.info}}
+                          </div>
+                        </ng-container>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

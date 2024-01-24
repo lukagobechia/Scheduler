@@ -1,0 +1,64 @@
+<!-- <main>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login">
+        <div class="mb-3">
+            <label for="email" class="forEmail form-label">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="someone@email.com" formControlName="email">
+            <small *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched">*Email is
+                invalid</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="forPassword form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+            <small *ngIf=" val_pass()">{{val_pass()}}</small>
+        </div>
+
+        <div class="buttons">
+
+            <button class="btn btn-success" (click)="Login()">Log In</button>
+            <button class="btn btn-secondary" (click)="goToRegister()">Sign Up</button>
+
+        </div>
+    </div>
+</form>
+</main> -->
+
+<body>
+  <div class="container" id="container" [ngClass]="{'right-panel-active': isSignUpActive}">
+    <div class="form-container sign-in-container">
+      <form [formGroup]="loginForm">
+        <h2>{{'Sign In' | translate}}</h2>
+          <input type="text" class="form-control" id="email" placeholder="{{'Email' |  translate}}" formControlName="email">
+          <small *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched">{{'validation.emailInvalid' | translate}}</small>
+
+          <input type="password" class="form-control" id="password" placeholder="{{'Password' | translate}}" formControlName="password">
+          <small *ngIf=" val_pass()">{{val_pass()}}</small> 
+          <small> {{EmailOrPassIncorrect}}</small>
+
+        <a>{{'Forgot Password' | translate}} ?</a>
+        <button class="btn btn-success" (click)="Login()">{{'Log In' | translate}}</button>
+
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h1>{{'Hello' | translate}}!</h1>
+          <p>{{'Enter Details' | translate}}</p>
+          <button class="ghost" (click)="goToRegister()">{{'Sign Up' | translate}}</button>
+          <div class="dropdown">
+            <button class="dropDown">
+              <img src="assets/earth-globe-svgrepo-com.svg" alt="EN" width="30px">
+            </button>
+            <div class="dropdown-content">
+              <a (click)="setLanguage('ka')">KA</a>
+              <a (click)="setLanguage('en')">EN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

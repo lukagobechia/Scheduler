@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+h2{
+    font-size: 50px;
+    margin-bottom: 5%;
+}
+
+tr{
+    border: 2px black solid;
+    background-color: #324960;
+    text-decoration: none;
+}
+
+td, th{
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    border: 1px black solid;
+    padding: 8px;
+    font-size: 20px;
+}
+
+td{
+    background-color: #36887d;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    padding: 0;
+}
+
+.formAndButton{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.inputField{
+    max-width: 75%;
+    font-size: 17.5px;
+}
+
+.manualBtn{
+    width: 120px;
+    height: 50px;
+    font-size: 17.5px;
+}

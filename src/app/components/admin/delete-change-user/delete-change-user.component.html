@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <h2>{{ 'UsersDashboard' | translate }}</h2>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{{ 'ID' | translate }}</th>
+          <th>{{ 'FName' | translate }}</th>
+          <th>{{ 'LName' | translate }}</th>
+          <th>{{ 'RoleID' | translate }}</th>
+          <th>{{ 'JobID' | translate }}</th>
+          <th>{{ 'Action' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of Users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.roleId }}</td>
+          <td>{{ user.jobId }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="DeleteUser(user.id)">{{ 'Delete' | translate }}</button>
+            <button class="btn">
+              <form [formGroup]="roleForm"  (click)="ChangeRole(user.id)">
+                <select formControlName="newRoleId">
+                  <option value="1" [attr.selected]="user.roleId === 1 ? true : null">{{ 'Admin' | translate }}</option>
+                  <option value="2" [attr.selected]="user.roleId === 2 ? true : null">{{ 'Worker' | translate }}</option>
+                </select>
+              </form>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

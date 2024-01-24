@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>  
+<div class="container">
+    <h2>{{'JobsDashboard' | translate}}</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>{{'Title' | translate}}</th>
+          <th>{{'Action' | translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobOptions">
+          <td>{{ job.id }}</td>
+          <td>{{ 'jobOptions.' + job.title | translate}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="DeleteJob(job.id)">{{'Delete' | translate}}</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <form [formGroup]="jobForm" (ngSubmit)="addNewJob()">
+      <div class="formAndButton">
+        <input class="inputField form-control" type="text" name="title" id="title" placeholder="Position.." formControlName="title" [(ngModel)]="newJob">
+        <button class="manualBtn btn btn-success" type="submit">{{'AddJobs' | translate}}</button>
+      </div>
+      <small *ngIf="this.jobForm.get('title')?.invalid && this.jobForm.get('title')?.touched">*Enter job Title</small>
+    </form>
+  </div>
+  

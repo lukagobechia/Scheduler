@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+  <h2>{{'PendingRequests' | translate}}</h2>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>{{ 'STime' | translate}}</th>
+        <th>{{ 'ETime' | translate}}</th>
+        <th>{{ 'UserID' | translate}}</th>
+        <th>{{ 'FName' | translate }}</th>
+        <th>{{ 'LName' | translate }}</th>
+        <th>{{ 'JobID' | translate }}</th>
+        <th>{{ 'JobTitle' | translate}}</th>
+        <th>{{ 'Approved' | translate}}</th>
+        <th>{{ 'Action' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of Requests">
+        <td>{{ request.id }}</td>
+        <td>{{ request.startTime | date:'short' }}</td>
+        <td>{{ request.endTime | date:'short' }}</td>
+        <td>{{ request.userId }}</td>
+        <td>{{ request.firstName }}</td>
+        <td>{{ request.lastName }}</td>
+        <td>{{ request.jobId }}</td>
+        <td>{{ 'jobOptions.' + request.jobTitle | translate}}</td>
+        <td>{{ request.isApproved ? 'Yes' : 'No' }}</td>
+        <td>
+          <button class="btn btn-success" *ngIf="!request.isApproved" (click)="approveRequest(request.id)">Approve</button>
+          <button class="btn btn-danger" (click)="declineRequest(request.id)">{{ 'Decline' | translate}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

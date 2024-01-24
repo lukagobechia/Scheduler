@@ -1,0 +1,22 @@
+<div class="request" [formGroup]="scheduleForm">
+  <p>Choose Date: </p>
+  <div class="mb-3">
+    <input type="date" class="form-control" id="selectedDate" formControlName="selectedDate">
+    <div *ngIf="scheduleForm.get('selectedDate')?.invalid && (scheduleForm.get('selectedDate')?.dirty || scheduleForm.get('selectedDate')?.touched)">
+      <small class="text-danger">Please choose a date.</small>
+    </div>
+  </div>
+
+  <div class="shifts">
+    <p>Shift: </p>
+    <button class="shift-button" type="button" (click)="scheduleForm.patchValue({ selectedShift: 'Morning' })">Morning</button>
+    <button class="shift-button" type="button" (click)="scheduleForm.patchValue({ selectedShift: 'Evening' })">Evening</button>
+    <div *ngIf="scheduleForm.get('selectedShift')?.invalid && (scheduleForm.get('selectedShift')?.dirty || scheduleForm.get('selectedShift')?.touched)">
+      <small class="text-danger">Please choose a shift.</small>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button (click)="addSchedule()">Add Schedule</button>
+  </div>
+</div>

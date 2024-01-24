@@ -1,0 +1,66 @@
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    column-gap: 20px;
+}
+
+.buttons button {
+    background-color: #4FC3A1;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #36887d;
+}
+.request{
+    text-align: center;
+    color: #36887d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.request p{
+    font-size: 25px;
+    margin-right: 20px;
+}
+.request input{
+    width: 300px;
+}
+.request .shifts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+.request .shifts p{
+margin-top: 10px;
+ }
+ 
+ .shift-button{
+    background-color: #fff;
+    color: #36887d;
+    border: solid 1px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.8s ease;
+ }
+ .shift-button:hover{
+    background-color:#36887d ;
+    color: #fff ;
+    scale: 1.1;
+ }
+ .shift-button:focus{
+    background-color:#36887d ;
+    color: #fff ;
+ }

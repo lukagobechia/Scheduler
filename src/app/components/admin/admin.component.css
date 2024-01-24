@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+    margin: 20px;
+    color: #36887d;
+}
+button {
+    background-color: #36887d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 17px;
+    width: 20%;
+    transition: background-color 0.3s ease;
+}
+
+.pendings{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+}
+
+button:hover {
+    background-color: #324960;
+}

@@ -1,0 +1,101 @@
+<!-- <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="group">
+        <div class="mb-3">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" formControlName="firstName">
+            <small *ngIf="val_fn()">{{val_fn()}}</small>
+        </div>
+    
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" formControlName="lastName">
+            <small *ngIf="val_ln()">*Last Name is required</small>
+        </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+      <div id="emailHelp" class="form-text emailText">We'll never share your email with anyone else.</div>
+      <small *ngIf="val_email()">{{val_email()}}</small>
+
+    </div>
+
+    <div class="group">
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <small *ngIf="val_pass()"> {{ val_pass() }}</small>
+
+          </div>
+      
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label"> Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+            <small *ngIf="val_conf_pass1()">*Please Confirm password</small>
+            <small *ngIf="val_confirm_pass2()">*Password does not match</small>
+          </div>
+    </div>
+
+<!-- 
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> 
+
+  ccc
+
+    <p><a href="">Already have an acoount ?</a></p>
+  </form> -->
+
+
+<body>
+  <div class="container" id="container" [ngClass]="{'right-panel-active': isSignUpActive}">
+    <div class="form-container sign-up-container">
+      <form [formGroup]="registrationForm">
+        <h2>{{'Create Account' | translate}}</h2>
+        <input type="text" class="form-control" id="firstname" formControlName="firstName" placeholder="{{'FName' | translate}}">
+        <small *ngIf="val_fn()">{{val_fn()}}</small>
+
+        <input type="text" class="form-control" id="lastname" formControlName="lastName" placeholder="{{'LName' | translate}}">
+        <small *ngIf="val_ln()">{{val_ln()}}</small>
+
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          formControlName="email" placeholder="{{'Email' | translate}}">
+        <small *ngIf="val_email()">{{val_email()}}</small>
+
+        <input type="password" class="form-control" id="password" formControlName="password" placeholder="{{'Password' | translate}}">
+        <small *ngIf="val_pass()"> {{ val_pass() }}</small>
+
+        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+          placeholder="{{'Confirm Password' | translate}}">
+        <small *ngIf="val_conf_pass1()">*{{'Confirm Password' | translate}}</small>
+        <small *ngIf="registrationForm.hasError('passwordMismatch')">*{{'validation.passwordMismatch' | translate}}</small>
+        <label class="form-label">{{'Select Position' | translate}}</label>
+        <select class="form-select" formControlName="jobId">
+          <option *ngFor="let job of jobOptions" [ngValue]="job">{{'jobOptions.' + job.title | translate}}</option>
+        </select>
+
+        <button type="submit " (click)="Register()" [disabled]="registrationForm.invalid">{{'Sign Up' | translate}}</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>{{'Welcome' | translate}}!</h1>
+          <p>{{'Please Sign In' | translate}}</p>
+          <button class="ghost" (click)="goToLogIn()">{{'Sign In' | translate}}</button>
+          <div class="dropdown">
+            <button class="dropDown">
+              <img src="assets/earth-globe-svgrepo-com.svg" alt="EN" width="30px">
+            </button>
+            <div class="dropdown-content">
+              <a (click)="setLanguage('ka')">KA</a>
+              <a (click)="setLanguage('en')">EN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
