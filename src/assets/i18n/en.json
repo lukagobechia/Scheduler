@@ -32,6 +32,7 @@
     "Departments": "Departments",
     "ITSupport": "IT Support",
     "Welcome": "Welcome",
+    "RegisteredSuccessfully": "Registered Successfully",
     "worker": {
         "shiftType": {
             "morning": "Morning",

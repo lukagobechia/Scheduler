@@ -76,7 +76,7 @@
           <option *ngFor="let job of jobOptions" [ngValue]="job">{{'jobOptions.' + job.title | translate}}</option>
         </select>
 
-        <button type="submit " (click)="Register()" [disabled]="registrationForm.invalid">{{'Sign Up' | translate}}</button>
+        <button type="submit" (click)="showAlert()" (click)="Register()" [disabled]="registrationForm.invalid">{{'Sign Up' | translate}}</button>
       </form>
     </div>
     <div class="overlay-container">

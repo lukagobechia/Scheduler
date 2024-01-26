@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'PendingRequests', component: PendingRequestsComponent},
   {path:'deleteChangeUser', component: DeleteChangeUserComponent},
   {path:'addDeleteJob', component: AddDeleteJobComponent},
-  {path:'', redirectTo: '/login', pathMatch: 'full'}
+  {path:'**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({

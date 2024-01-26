@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors,
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Job } from 'src/app/interfaces/job';
+import { AlertService } from 'src/app/services/alert.service';
 import { FuncService } from 'src/app/services/func.service';
 import { CustomValidator } from 'src/app/validators/val.Validators';
 
@@ -31,7 +32,8 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private FuncService: FuncService,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private alertService: AlertService
   ) {translate.setDefaultLang('en'); }
   
   ngOnInit(): void {
@@ -141,4 +143,8 @@ export class RegisterComponent implements OnInit {
   setLanguage(lang: string) {
     this.translate.use(lang);
   }
+
+  showAlert(): void {
+    this.alertService.openAlert('', this.translate.instant('RegisteredSuccessfully'));
+  }  
 }

@@ -20,6 +20,9 @@ import { DeleteChangeUserComponent } from './components/admin/delete-change-user
 import { AddDeleteJobComponent } from './components/admin/add-delete-job/add-delete-job.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertComponent } from './components/alert/alert.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PendingRequestsComponent,
     DeleteChangeUserComponent,
     AddDeleteJobComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
